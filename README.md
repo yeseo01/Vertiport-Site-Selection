@@ -25,7 +25,7 @@ I also contributed to the weighting strategy, including the use of traffic conge
 
 ### Weighted K-Means
 
-The custom implementation is in `src/main.py`.
+The custom weighted K-Means implementation is in `src/kmeans.py`.
 
 For each data point, cluster assignment uses squared Euclidean distance to select the nearest centroid.
 
@@ -104,6 +104,9 @@ Some legacy text metadata in the processed CSV has encoding damage. The executab
 │   ├── raw/
 │   └── processed/
 ├── src/
+│   ├── __init__.py
+│   ├── kmeans.py
+│   ├── analysis.py
 │   ├── main.py
 │   └── reference_sklearn.py
 ├── Pipfile
@@ -111,7 +114,9 @@ Some legacy text metadata in the processed CSV has encoding damage. The executab
 └── README.md
 ```
 
-- `src/main.py` — custom weighted K-Means implementation, site selection, and diagnostics
+- `src/kmeans.py` — custom weighted K-Means implementation and representative-site selection
+- `src/analysis.py` — Elbow, Silhouette-score, and Silhouette-diagram diagnostics
+- `src/main.py` — data loading and pipeline orchestration
 - `src/reference_sklearn.py` — unweighted scikit-learn K-Means comparison baseline
 
 ## How to Run
@@ -127,7 +132,7 @@ pipenv sync
 Run the main weighted clustering pipeline:
 
 ```bash
-pipenv run python src/main.py
+pipenv run python -m src.main
 ```
 
 Run the scikit-learn comparison baseline:
