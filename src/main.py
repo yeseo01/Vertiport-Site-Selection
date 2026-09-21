@@ -33,15 +33,9 @@ def main():
             "Penalty",
         ],
     )
-    data_points = data[
-        ["Longitude", "Latitude"]
-    ].values.tolist()
+    data_points = data[["Longitude", "Latitude"]].values.tolist()
 
-    weights = (
-        data["NormComm"]
-        + data["NormTrf"]
-        + data["Penalty"]
-    )
+    weights = data["NormComm"] + data["NormTrf"] + data["Penalty"]
 
     n_clusters = 17
     max_iter = 100
@@ -75,6 +69,7 @@ def main():
         max_iter=max_iter,
         weights=weights,
     )
+
 
 if __name__ == "__main__":
     main()

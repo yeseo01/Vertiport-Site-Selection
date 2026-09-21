@@ -107,9 +107,7 @@ def silhouette_diagram(
     y_lower = 10
 
     for cluster_index in range(n_clusters):
-        cluster_values = silhouette_values[
-            labels == cluster_index
-        ]
+        cluster_values = silhouette_values[labels == cluster_index]
         cluster_values.sort()
 
         cluster_size = len(cluster_values)
@@ -129,9 +127,7 @@ def silhouette_diagram(
 
         y_lower = y_upper + 10
 
-    ax.set_title(
-        f"Silhouette Diagram (K = {n_clusters})"
-    )
+    ax.set_title(f"Silhouette Diagram (K = {n_clusters})")
     ax.set_xlabel("Silhouette Coefficient")
     ax.set_ylabel("Cluster Label")
 
