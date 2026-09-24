@@ -41,7 +41,7 @@ The original assignment included two related tasks:
 
 This repository primarily reproduces the first task. The original team also used Elbow and Silhouette analyses as diagnostics for the second task and supplemented them with demand- and capacity-based reasoning. That demand/capacity analysis is not fully reproduced in the current codebase.
 
-## Method
+## Methodology
 
 ### Weighted K-Means
 
